@@ -13,7 +13,7 @@ public class Login extends JFrame {
         int frameWidth = 850;
         int frameHeight = 480;
         int imageWidth = 100;
-        int imageHeight = 100;
+        int imageHeight = 10;
 
         int x = (frameWidth - imageWidth) / 2;
         int y = (frameHeight - imageHeight) / 2;
