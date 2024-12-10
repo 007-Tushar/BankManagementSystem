@@ -10,6 +10,11 @@ public class Login extends JFrame {
     private JLabel cardImage;
     private JLabel bgImage;
     private ImageIcon bgIcon; // Cache the original background icon
+    private JLabel welcomeMsg;
+    private  JLabel labelCardNo;
+    private JLabel labelPin;
+    private JTextField textCardNo;
+    private JPasswordField passwordPin;
     Login() {
         super("Bank Management System");
 
@@ -42,6 +47,48 @@ public class Login extends JFrame {
         cardImage = new JLabel(card);
         cardImage.setBounds(450, 200, imageWidth, imageHeight);
         add(cardImage);
+
+        //Welcome message
+        welcomeMsg = new JLabel("Welcome to ATM");
+        welcomeMsg.setForeground(Color.WHITE);
+        welcomeMsg.setFont(new Font("AvantGarde", Font.BOLD, 38));
+        welcomeMsg.setBounds(230,140,450, 40);
+        add(welcomeMsg);
+
+        //Label Card Number
+        labelCardNo = new JLabel("Card No.");
+        labelCardNo.setForeground(Color.WHITE);
+        labelCardNo.setFont(new Font("Ralway", Font.BOLD, 20));
+        labelCardNo.setBounds(230,180, 250, 60);
+        add(labelCardNo);
+
+        //Text field
+        textCardNo = new JTextField(15);
+        textCardNo.setForeground(Color.BLACK);
+        textCardNo.setFont(new Font("Arial", Font.BOLD, 14));
+        textCardNo.setBounds(350, 195, 350,30);
+        add(textCardNo);
+
+        //Label PIN
+        labelPin = new JLabel("PIN");
+        labelPin.setForeground(Color.WHITE);
+        labelPin.setFont(new Font("Ralway", Font.BOLD, 20));
+        labelPin.setBounds(230, 180, 100, 160);
+        add(labelPin);
+
+        //Password field
+        passwordPin = new JPasswordField(4);
+        passwordPin.setForeground(Color.BLACK);
+        passwordPin.setFont(new Font("Arial", Font.BOLD, 20));
+        passwordPin.setBounds(350,245,350, 30);
+        add(passwordPin);
+
+
+
+
+
+
+
 
         //Background Image
         bgIcon = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png"));
@@ -84,7 +131,7 @@ public class Login extends JFrame {
         bankImage.setBounds(xbank, 20, imageWidth, imageHeight); // Update bounds
         cardImage.setBounds(xcard - 60, ycard - 80, 150, 150);
         bgImage.setBounds(0, 0, frameWidth, frameHeight);
-        repaint(); // Ensure the frame updates
+        welcomeMsg.setBounds(xbank - 100, 140, 450, 40);
 
         // Scale the background image to fit the frame
         Image bgImg = bgIcon.getImage().getScaledInstance(frameWidth, frameHeight, Image.SCALE_DEFAULT);
