@@ -1,4 +1,5 @@
 package bank.management.system;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
@@ -15,6 +16,7 @@ public class Login extends JFrame {
     private JLabel labelPin;
     private JTextField textCardNo;
     private JPasswordField passwordPin;
+    private JButton button1,button2,button3;
     Login() {
         super("Bank Management System");
 
@@ -83,7 +85,21 @@ public class Login extends JFrame {
         passwordPin.setBounds(350,245,350, 30);
         add(passwordPin);
 
+        //Buttons
+        button1 = new JButton("Sign In");
+        button1.setFont(new Font("Arial", Font.BOLD, 14));
+        button1.setBounds(350, 300, 100, 30);
+        add(button1);
 
+        button2 = new JButton("Clear");
+        button2.setFont(new Font("Arial", Font.BOLD, 14));
+        button2.setBounds(500, 300, 100, 30);
+        add(button2);
+
+        button3 = new JButton("Sign Up");
+        button3.setFont(new Font("Arial", Font.BOLD, 14));
+        button3.setBounds(350, 340, 250, 30);
+        add(button3);
 
 
 
