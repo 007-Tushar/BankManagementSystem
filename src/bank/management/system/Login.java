@@ -8,6 +8,8 @@ public class Login extends JFrame {
 
     private JLabel bankImage; // Declare JLabel at the class level
     private JLabel cardImage;
+    private JLabel bgImage;
+    private ImageIcon bgIcon; // Cache the original background icon
     Login() {
         super("Bank Management System");
 
@@ -41,6 +43,16 @@ public class Login extends JFrame {
         cardImage.setBounds(450, 200, imageWidth, imageHeight);
         add(cardImage);
 
+        //Background Image
+        bgIcon = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png"));
+        Image bgImg = bgIcon.getImage().getScaledInstance(frameWidth, frameHeight, Image.SCALE_DEFAULT);
+        ImageIcon bg = new ImageIcon(bgImg);
+
+        // Initialize the JLabel and set its bounds
+        bgImage = new JLabel(bg);
+        bgImage.setBounds(0, 0, frameWidth, frameHeight);
+        add(bgImage);
+
 
         // Frame properties
         setSize(frameWidth, frameHeight);
@@ -71,7 +83,18 @@ public class Login extends JFrame {
 
         bankImage.setBounds(xbank, 20, imageWidth, imageHeight); // Update bounds
         cardImage.setBounds(xcard - 60, ycard - 80, 150, 150);
+        bgImage.setBounds(0, 0, frameWidth, frameHeight);
         repaint(); // Ensure the frame updates
+
+        // Scale the background image to fit the frame
+        Image bgImg = bgIcon.getImage().getScaledInstance(frameWidth, frameHeight, Image.SCALE_DEFAULT);
+        bgImage.setIcon(new ImageIcon(bgImg));
+        bgImage.setBounds(0, 0, frameWidth, frameHeight);
+
+        // Refresh the frame
+        revalidate();
+        repaint();
+
     }
 
     public static void main(String[] args) {
